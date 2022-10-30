@@ -1,0 +1,43 @@
+<%- include("partials/header.ejs") %>
+
+<%- include ("partials/main_nav.ejs") %> 
+
+<!-- Main content-->
+<main class="container">
+    <div class="row">
+        <div class="offset-md-1 col-md-10">
+            <br>
+            <table class="table table-bordered table-striped table-hover">
+            <tr class="d-flex">
+                <th class="text-center col-2">Name</th>
+                <th class="text-center col-2">Number</th>
+                <th class="col-4">Email</th>
+
+            </tr>
+
+            <% for(let count=0; count< contact_list.length; count++) { %>
+            <tr class="d-flex">
+                <td class="text-center col-2"><%= contact_list[count].name %> </td>
+                <td class="text-center col-2"><%= contact_list[count].number %> </td>
+                <td class="col-4"><%= contact_list[count].email_address %> </td>
+                <td class="text-center col-2"><button type="button" class="btn btn-primary">Update</button></td>
+                <td class="text-center col-2"><button type="button" class="btn btn-danger">Delete</button></td>
+
+            </tr>
+
+            
+            
+
+
+
+            <% } %>
+            </table>
+
+        </div>
+
+    </div>
+</main>
+
+<%- include ("partials/bottom_nav.ejs") %>
+
+<%- include ("partials/footer.ejs") %>
