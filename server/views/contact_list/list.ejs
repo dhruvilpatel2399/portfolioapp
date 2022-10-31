@@ -1,6 +1,6 @@
-<%- include("partials/header.ejs") %>
+<%- include("../partials/header.ejs") %>
 
-<%- include ("partials/main_nav.ejs") %> 
+<%- include ("../partials/main_nav.ejs") %> 
 
 <!-- Main content-->
 <main class="container">
@@ -20,14 +20,12 @@
                 <td class="text-center col-2"><%= contact_list[count].name %> </td>
                 <td class="text-center col-2"><%= contact_list[count].number %> </td>
                 <td class="col-4"><%= contact_list[count].email_address %> </td>
-                <td class="text-center col-2"><button type="button" class="btn btn-primary">Update</button></td>
-                <td class="text-center col-2"><button type="button" class="btn btn-danger">Delete</button></td>
+                <td class="text-center col-2"> <a href="/contact-list/edit/<%= contact_list[count]._id %>" class="btn btn-primary btn-sm">
+                    <i class="fas fa-pencil-alt"></i> Update </a>
+                <td class="text-center col-2"><a href="/contact-list/delete/<%= contact_list[count]._id %>" class="btn btn-danger btn-sm">
+                    <i class="fas fa-trash-alt"></i> Delete</a>
 
             </tr>
-
-            
-            
-
 
 
             <% } %>
@@ -38,6 +36,6 @@
     </div>
 </main>
 
-<%- include ("partials/bottom_nav.ejs") %>
+<%- include ("../partials/bottom_nav.ejs") %>
 
-<%- include ("partials/footer.ejs") %>
+<%- include ("../partials/footer.ejs") %>

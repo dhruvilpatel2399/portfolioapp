@@ -4,21 +4,21 @@ let mongoose = require("mongoose");
 
 let contact_list= require("../models/contact_list");
 
-//read operation
+let contactController = require('../controllers/contact_list');
 
-router.get("/",(req,res,next)=>{
-    contact_list.find((err,contact_list) => {
-        if (err)
-        {
-            return console.error(err);
-        }
-        else
-        {
-            //console.log(contact_list);
-            res.render('contact_list',{title:'contact_list',contact_list})
-        }
-    });
-});
+//read operation
+router.get('/', contactController.displaycontactlist);
+
+//
+router.get('/edit/:id', contactController.displayEditPage);
+router.post('/edit/:id', contactController.processEditPage);
+//
+
+
+// delete
+
+router.get('/delete/:id', contactController.performDelete);
+
 
 
 

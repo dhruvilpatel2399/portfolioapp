@@ -9,7 +9,8 @@ let mongoose = require("mongoose");
 let DB = require("./db");
 
 // connect mongoose to DB URI
-mongoose.connect(DB.URI, {useNewUrlParser:true, useUnifiedTopology:true});
+mongoose.connect(DB.URI, {useNewUrlParser:true, useUnifiedTopology:true,dbName:"contacts"});
+
 
 let mongoDB=mongoose.connection;
 mongoDB.on("error",console.error.bind(console,"connection error in DB"));
