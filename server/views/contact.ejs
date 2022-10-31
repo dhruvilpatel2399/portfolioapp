@@ -3,6 +3,7 @@
 
 <%- include ("partials/main_nav.ejs") %> 
 
+<form action="/home" method="get">
 <div class="column sm-2">
     <label for="exampleFormControlInput1" class="form-label">Name</label>
     <input type="text" class="form-control" id="exampleFormControlTextarea1" placeholder="John">
@@ -22,9 +23,9 @@
     <textarea class="form-control" id="exampleFormControlTextarea3" rows="3"></textarea>
   </div>
 
-  <button type="button" class="btn btn-dark" href="/">Submit</button>
+  <button type="submit" class="btn btn-dark" href="/home">Submit</button>
 
-
+</form>
 
 <%- include ("partials/bottom_nav.ejs") %>
 
